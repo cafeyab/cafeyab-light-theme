@@ -23,11 +23,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* header */
 .pi-header a {
-    color: #2A2B2C;
+    color: #fff;
 }
 
-.pi-header .container {
-    border-bottom: 2px solid #212121;
+.pi-header {
+    background-color: #212121;
+    color: #fff;
 }
 
 .pi-header .pi-header-logo {
@@ -44,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 .pi-header h2 {
     padding: 1px;
     margin: 1px;
-    color: #2A2B2C;
+    color: #fff;
 }
 
 .pi-header .navbar-default {
@@ -54,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pi-header .navbar-default li a {
-    color: #2A2B2C;
+    color: #fff;
 }
 
 .pi-header .guide-search-block {
@@ -89,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .pi-social ul li a {
     font-size: 18px;
-    color: #212121;
+    color: #fff;
 }
 
 @media (max-width: 767px) {
@@ -110,6 +111,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .yamm .dropdown-menu {
     left: auto;
+    color: #212121;
 }
 .yamm .yamm-content {
     padding: 20px 30px;
@@ -120,6 +122,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 .grid-menu {
     padding: 10px 30px;
+}
+
+.grid-menu li a {
+    color: #212121 !important;
 }
 
 .grid-menu [class*="col-"] {
