@@ -91,108 +91,51 @@ $breadcrumbs = $this->breadcrumb(array('prefix' => array(array('label' => __('Ho
 <header class="pi-header">
     <div class="container">
         <div class="row clearfix">
-            <div class="col-md-2 col-sm-12 col-xs-12">
-                <div class="pi-header-logo">
-                    <?php if ($module == 'system') { ?>
-                        <h1>
-                            <a href="<?php echo $this->url('home'); ?>" title="<?php echo _escape($sitename); ?>">
-                                <img src="<?php echo $this->logo(); ?>" alt="<?php echo _escape($sitename); ?>">
-                                <?php echo _escape($sitename); ?>
-                            </a>
-                        </h1>
-                    <?php } else { ?>
-                        <h2>
-                            <a href="<?php echo $this->url('home'); ?>" title="<?php echo _escape($sitename); ?>">
-                                <img src="<?php echo $this->logo(); ?>" alt="<?php echo _escape($sitename); ?>">
-                                <?php echo _escape($sitename); ?>
-                            </a>
-                        </h2>
-                    <?php } ?>
-                </div>
-            </div>
-            <div class="col-md-10 col-sm-12 col-xs-12">
-                <div class="col-md-8 col-sm-12 col-xs-12">
-                    <?php echo $this->widget('guide-search'); ?>
-                </div>
-                <div class="col-md-4 col-sm-12 col-xs-12">
-                    <div class="pi-social">
-                        <ul class="list-inline text-right">
-                            <li class="pi-social-twitter"><a title="تویتر" href="https://twitter.com/cafeyab" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li class="pi-social-facebook"><a title="فیسبوک" href="https://www.facebook.com/cafeyaab" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                            <li class="pi-social-pinterest"><a title="پین‌ترست" href="https://www.pinterest.com/cafeyab" target="_blank"><i class="fa fa-pinterest"></i></a></li>
-                            <li class="pi-social-google"><a title="گوگل پلاس" href="https://plus.google.com/+CafeYab" target="_blank" rel="publisher"><i class="fa fa-google-plus"></i></a></li>
-                            <li class="pi-social-instagram"><a title="اینستاگرام" href="https://www.instagram.com/cafe.yab" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                            <li class="pi-social-foursquare"><a title="Foursquare" href="https://www.foursquare.com/cafeyab" target="_blank"><i class="fa fa-foursquare"></i></a></li>
-                            <li class="pi-social-rss-news hidden-xs hidden-sm"><a title="خوراک اخبار و مقالات" href="https://www.cafeyab.com/feed/news" target="_blank"><i class="fa fa-rss-square"></i></a></li>
-                            <li class="pi-social-rss-guide hidden-xs hidden-sm"><a title="خوراک کافه‌ها" href="https://www.cafeyab.com/feed/guide" target="_blank"><i class="fa fa-rss-square"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="navbar navbar-default yamm">
                         <div class="navbar-header">
                             <button class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-grid">
                                 <i class="fa fa-bars"></i>
                             </button>
+                            <div class="pi-header-logo navbar-brand">
+                                <ul class="list-inline">
+                                    <li>
+                                        <a href="<?php echo $this->url('home'); ?>" title="<?php echo _escape($sitename); ?>">
+                                            <img src="<?php echo $this->logo(); ?>" alt="<?php echo _escape($sitename); ?>">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <?php if ($module == 'system') { ?>
+                                            <h1>
+                                                <a href="<?php echo $this->url('home'); ?>" title="<?php echo _escape($sitename); ?>">
+                                                    <?php echo _escape($sitename); ?>
+                                                </a>
+                                            </h1>
+                                        <?php } else { ?>
+                                            <h2>
+                                                <a href="<?php echo $this->url('home'); ?>" title="<?php echo _escape($sitename); ?>">
+                                                    <?php echo _escape($sitename); ?>
+                                                </a>
+                                            </h2>
+                                        <?php } ?>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                         <div id="navbar-collapse-grid" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
+                                <li><a href="#" title="">ثبت و مدیریت کافه</a></li>
                                 <li class="dropdown yamm-fw">
-                                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">کافه ها<b class="caret"></b></a>
+                                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">جسنجوی کافه ها<b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li class="grid-menu">
                                             <div class="row">
-                                                <div class="col-sm-3">
-                                                    <h5>منوی کافه منوی کافه</h5>
-                                                    <ul class="list-unstyled">
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                    </ul>
+                                                <div class="col-sm-12">
+                                                    <?php echo $this->widget('guide-search'); ?>
                                                 </div>
-                                                <div class="col-sm-3">
-                                                    <h5>منوی کافه منوی کافه</h5>
-                                                    <ul class="list-unstyled">
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <h5>منوی کافه منوی کافه</h5>
-                                                    <ul class="list-unstyled">
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <h5>منوی کافه منوی کافه</h5>
-                                                    <ul class="list-unstyled">
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                        <li><a href="#" title="منوی کافه منوی کافه">منوی کافه منوی کافه</a></li>
-                                                    </ul>
+                                                <div class="col-sm-12">
+                                                    <?php echo $this->widget('guide-map'); ?>
                                                 </div>
                                             </div>
                                         </li>
@@ -276,7 +219,7 @@ $breadcrumbs = $this->breadcrumb(array('prefix' => array(array('label' => __('Ho
                                     </ul>
                                 </li>
                                 <li class="dropdown yamm-fw">
-                                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">مطالب<b class="caret"></b></a>
+                                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">منطقه باریستا<b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li class="grid-menu">
                                             <div class="row">
@@ -326,6 +269,9 @@ $breadcrumbs = $this->breadcrumb(array('prefix' => array(array('label' => __('Ho
                                 </li>
                             </ul>
                             <?php echo $this->widget('system-user-bar'); ?>
+                            <ul class="nav navbar-nav cafe-richard">
+                                <li><a href="#" title="Cafés Richard">Cafés Richard</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -339,18 +285,10 @@ $breadcrumbs = $this->breadcrumb(array('prefix' => array(array('label' => __('Ho
         <?php if ($breadcrumbs) { echo $breadcrumbs; } ?>
         <!-- Flash messenger -->
         <?php include $this->template('flash-messenger'); ?>
-        <!-- Top head zone -->
-        <?php if (!empty($blocks['0'])) { ?>
-            <div class="pi-zone-0">
-                <?php foreach ($blocks['0'] as $block) {
-                    include $blockTemplate;
-                } ?>
-            </div>
-        <?php } ?>
         <div class="row">
             <!-- Left zone -->
             <?php if (!empty($blocks['1'])) { ?>
-                <div class="pi-zone-1 col-md-4">
+                <div class="pi-zone-1 col-md-3">
                     <?php foreach ($blocks['1'] as $block) {
                         include $blockTemplate;
                     } ?>
@@ -358,9 +296,9 @@ $breadcrumbs = $this->breadcrumb(array('prefix' => array(array('label' => __('Ho
             <?php } ?>
             <div class="<?php
             if (isset($blocks['1']) && isset($blocks['8'])) {
-                echo 'col-md-4';
+                echo 'col-md-3';
             } elseif (isset($blocks['1']) || isset($blocks['8'])) {
-                echo 'col-md-8';
+                echo 'col-md-9';
             } else {
                 echo 'col-md-12';
             }
@@ -404,6 +342,29 @@ $breadcrumbs = $this->breadcrumb(array('prefix' => array(array('label' => __('Ho
                         <?php echo Pi::service('comment')->load(array('options' => array('type' => 'js'))); ?>
                     </div>
                 <?php } ?>
+            </div>
+        </div>
+    </div>
+    <?php if (!empty($blocks['0'])) { ?>
+        <div class="pi-zone-0">
+            <?php foreach ($blocks['0'] as $block) {
+                include $blockTemplate;
+            } ?>
+        </div>
+    <?php } ?>
+    <div class="container">
+        <div class="row">
+            <div class="<?php
+            if (isset($blocks['1']) && isset($blocks['8'])) {
+                echo 'col-md-3';
+            } elseif (isset($blocks['1']) || isset($blocks['8'])) {
+                echo 'col-md-9';
+            } else {
+                echo 'col-md-12';
+            }
+            ?>">
+
+
                 <!-- Module content ends -->
                 <?php if (isset($blocks['5']) || isset($blocks['6'])) { ?>
                     <div class="row">
@@ -438,7 +399,7 @@ $breadcrumbs = $this->breadcrumb(array('prefix' => array(array('label' => __('Ho
             </div>
             <!-- Right zone -->
             <?php if (isset($blocks['8'])) { ?>
-                <div class="col-md-4 pi-zone-8">
+                <div class="col-md-3 pi-zone-8">
                     <?php foreach ($blocks['8'] as $block) {
                         include $blockTemplate;
                     } ?>
@@ -458,7 +419,7 @@ $breadcrumbs = $this->breadcrumb(array('prefix' => array(array('label' => __('Ho
 <footer class="pi-footer">
     <div class="container">
         <div class="row clearfix">
-            <div class="col-md-7 col-sm-12 col-xs-12">
+            <div class="col-md-7 col-sm-12 col-xs-12 text-justify">
                 <h4>درباره کافه یاب</h4>
                 <p>کافه‌یاب به عنوان مرجع معرفی و اطلاع‌رسانی کافه‌های ایران، در تابستان ۹۳ فعالیت خود را آغاز نمود. این وب‌سایت در نظر دارد تا با معرفی کافه‌ها، کافی‌شاپ‌ها، شیرینی فروشی‌ها و قهوه فروشی‌ها، امکان آشنایی کاربران را با این مکان‌ها و خدماتشان، فراهم کند. همچنین امکان درج و به روز رسانی اطلاعات کافه‌ها توسط صاحبان آن‌ها در وب‌سایت وجود دارد.</p>
                 <p>تمامی کالاها و خدمات این وب‌سایت، حسب مورد دارای مجوزهای لازم از مراجع مربوطه می‌باشند و فعالیت‌های این وب‌سایت تابع قوانین و مقررات جمهوری اسلامی ایران است.</p>
@@ -482,6 +443,16 @@ $breadcrumbs = $this->breadcrumb(array('prefix' => array(array('label' => __('Ho
                             <li><a title="فروشگاه" href="https://www.cafeyab.com/shop"><i class="fa fa-angle-left"></i> فروشگاه</a></li>
                         </ul>
                     </div>
+                    <div class="pi-social col-md-12 col-sm-12 col-xs-12">
+                        <ul class="list-inline text-right">
+                            <li class="pi-social-twitter"><a title="تویتر" href="https://twitter.com/cafeyab" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li class="pi-social-facebook"><a title="فیسبوک" href="https://www.facebook.com/cafeyaab" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li class="pi-social-pinterest"><a title="پین‌ترست" href="https://www.pinterest.com/cafeyab" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+                            <li class="pi-social-google"><a title="گوگل پلاس" href="https://plus.google.com/+CafeYab" target="_blank" rel="publisher"><i class="fa fa-google-plus"></i></a></li>
+                            <li class="pi-social-instagram"><a title="اینستاگرام" href="https://www.instagram.com/cafe.yab" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                            <li class="pi-social-foursquare"><a title="Foursquare" href="https://www.foursquare.com/cafeyab" target="_blank"><i class="fa fa-foursquare"></i></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-6">
@@ -497,5 +468,6 @@ $breadcrumbs = $this->breadcrumb(array('prefix' => array(array('label' => __('Ho
         </div>
     </div>
 </footer>
+<?php $this->footScript()->appendFile($this->assetTheme('js/front.js')); ?>
 </body>
 </html>

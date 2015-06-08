@@ -37,7 +37,7 @@ $render = function ($item) use ($_this, $width, $height)
         $content .= $image;
     }
     if ($caption || $description) {
-        $content .= '<div class="carousel-caption"><div class="col-md-12 col-sm-12 hidden-sm hidden-xs"><div class="animated slideInDown"><span>' . $caption . '</span></div><div class="list">' . $description . '</div></div></div>';
+        //$content .= '<div class="carousel-caption"><div class="col-md-12 col-sm-12 hidden-sm hidden-xs"><div class="animated slideInDown"><span>' . $caption . '</span></div><div class="list">' . $description . '</div></div></div>';
     }
     return $content;
 };
@@ -45,12 +45,12 @@ $render = function ($item) use ($_this, $width, $height)
 $carouselId = 'hp-slider';
 ?>
     <div id="<?php echo $carouselId; ?>" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
+        <!-- <ol class="carousel-indicators">
             <li data-target="#<?php echo $carouselId; ?>" data-slide-to="0" class="active"></li>
             <?php for ($i = 1; $i <= $count; $i++) { ?>
                 <li data-target="#<?php echo $carouselId; ?>" data-slide-to="<?php echo $i; ?>"></li>
             <?php } ?>
-        </ol>
+        </ol> -->
 
         <!-- Carousel items -->
         <div class="carousel-inner">

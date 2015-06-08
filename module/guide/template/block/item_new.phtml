@@ -1,0 +1,130 @@
+<div class="guide-block">
+    <div class="guide-block-item clearfix <?php echo $block['extra_css']; ?> row">
+        <?php foreach($block['resources'] as $item) { ?>
+            <?php if($block['list_type'] == 'vertical') { ?>
+                <div class="col-sm-6 col-md-3 itemBox h-review">
+                    <div class="thumbnail p-item h-card">
+                        <?php if($item['image']) { ?>
+                            <a class="u-url" title="<?php echo $this->escape($item['title']); ?>" href="<?php echo $this->escape($item['itemUrl']); ?>">
+                                <img class="img-responsive u-photo" src="<?php echo $item['mediumUrl']; ?>" alt="<?php echo $this->escape($item['title']); ?>" />
+                            </a>
+                        <?php } ?>
+                        <div class="caption">
+                            <?php if($block['showtitle']) { ?>
+                                <h3 class="p-name">
+                                    <a class="u-url" title="<?php echo $this->escape($item['title']); ?>" href="<?php echo $this->escape($item['itemUrl']); ?>">
+                                        <?php echo $this->escape($item['title']); ?>
+                                    </a>
+                                </h3>
+                            <?php } ?>
+                            <?php if($block['showlocation'] && !empty($item['area']) && !empty($item['city'])) { ?>
+                                <div class="itemInfo p-adr">
+                                    <strong><?php echo _b('Location'); ?></strong> :
+                                    <span class="p-locality"><?php echo $this->escape($item['city']); ?></span>
+                                    <?php if(!empty($item['area'])) { ?> | <span class="p-street-address"><?php echo $this->escape($item['area']); ?></span><?php } ?>
+                                </div>
+                            <?php } ?>
+                            <?php if ($item['item_type'] == 'commercial') {  ?>
+                                <?php if($block['showphone'] && !empty($item['phone1'])) { ?>
+                                    <div class="itemInfo"><strong><?php echo _b('Phone'); ?></strong> : <span class="p-tel"><?php echo $this->escape($item['phone1']); ?></span></div>
+                                <?php } ?>
+                                <?php if($block['showtype'] && !empty($item['type'])) { ?>
+                                    <div class="itemInfo"><strong><?php echo _b('Type'); ?></strong> : <?php echo $this->escape($item['type']); ?></div>
+                                <?php } ?>
+                            <?php } elseif ($item['item_type'] == 'route') {  ?>
+                                <?php if($block['showdifficulty'] && !empty($item['difficulty'])) { ?>
+                                    <div class="itemInfo"><strong><?php echo _b('Difficulty'); ?></strong> : <?php echo $this->escape($item['difficulty']); ?></div>
+                                <?php } ?>
+                                <?php if($block['showduration'] && !empty($item['duration'])) { ?>
+                                    <div class="itemInfo"><strong><?php echo _b('Duration (h)'); ?></strong> : <?php echo $this->escape($item['duration']); ?></div>
+                                <?php } ?>
+                                <?php if($block['showelevation'] && !empty($item['elevation_end'])) { ?>
+                                    <div class="itemInfo"><strong><?php echo _b('Elevation (m)'); ?></strong> : <?php echo $this->escape($item['elevation_end']); ?></div>
+                                <?php } ?>
+                            <?php } elseif ($item['item_type'] == 'poi') {  ?>
+                                <?php if($block['showtype'] && !empty($item['type'])) { ?>
+                                    <div class="itemInfo"><strong><?php echo _b('Type'); ?></strong> : <?php echo $this->escape($item['type']); ?></div>
+                                <?php } ?>
+                                <?php if($block['showelevation'] && !empty($item['elevation_end'])) { ?>
+                                    <div class="itemInfo"><strong><?php echo _b('Elevation (m)'); ?></strong> : <?php echo $this->escape($item['elevation_end']); ?></div>
+                                <?php } ?>
+                            <?php } ?>
+                            <?php if($block['showsummary'] && !empty($item['text_summary'])){  ?>
+                                <div class="itemSummary"><?php echo $item['text_summary']; ?></div>
+                            <?php } ?>
+                            <?php if (!empty($item['map_latitude']) && !empty($item['map_longitude'])) { ?>
+                                <div class="h-geo hidden">
+                                    <span class="p-latitude"><?php echo $this->escape($item['map_latitude']); ?></span>,
+                                    <span class="p-longitude"><?php echo $this->escape($item['map_longitude']); ?></span>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                </div>
+            <?php } else { ?>
+                <div class="media h-review">
+                    <?php if($item['image']) { ?>
+                        <a class="pull-left u-url" title="<?php echo $this->escape($item['title']); ?>" href="<?php echo $this->escape($item['itemUrl']); ?>">
+                            <img class="media-object img-rounded img-responsive u-photo" src="<?php echo $item['thumbUrl']; ?>" alt="<?php echo $this->escape($item['title']); ?>" />
+                        </a>
+                    <?php } ?>
+                    <div class="media-body p-item h-card">
+                        <?php if($block['showtitle']) { ?>
+                            <h3 class="media-heading p-name">
+                                <a class="u-url" title="<?php echo $this->escape($item['title']); ?>" href="<?php echo $this->escape($item['itemUrl']); ?>">
+                                    <?php echo $this->escape($item['title']); ?>
+                                </a>
+                            </h3>
+                        <?php } ?>
+                        <?php if($block['showlocation'] && !empty($item['area']) && !empty($item['city'])) { ?>
+                            <div class="itemInfo p-adr">
+                                <strong><?php echo _b('Location'); ?></strong> :
+                                <span class="p-locality"><?php echo $this->escape($item['city']); ?></span>
+                                <?php if(!empty($item['area'])) { ?> | <span class="p-street-address"><?php echo $this->escape($item['area']); ?></span><?php } ?>
+                            </div>
+                        <?php } ?>
+                        <?php if ($item['item_type'] == 'commercial') {  ?>
+                            <?php if($block['showphone'] && !empty($item['phone1'])) { ?>
+                                <div class="itemInfo"><strong><?php echo _b('Phone'); ?></strong> : <span class="p-tel"><?php echo $this->escape($item['phone1']); ?></span></div>
+                            <?php } ?>
+                            <?php if($block['showtype'] && !empty($item['type'])) { ?>
+                                <div class="itemInfo"><strong><?php echo _b('Type'); ?></strong> : <?php echo $this->escape($item['type']); ?></div>
+                            <?php } ?>
+                        <?php } elseif ($item['item_type'] == 'route') {  ?>
+                            <?php if($block['showdifficulty'] && !empty($item['difficulty'])) { ?>
+                                <div class="itemInfo"><strong><?php echo _b('Difficulty'); ?></strong> : <?php echo $this->escape($item['difficulty']); ?></div>
+                            <?php } ?>
+                            <?php if($block['showduration'] && !empty($item['duration'])) { ?>
+                                <div class="itemInfo"><strong><?php echo _b('Duration (h)'); ?></strong> : <?php echo $this->escape($item['duration']); ?></div>
+                            <?php } ?>
+                            <?php if($block['showelevation'] && !empty($item['elevation_end'])) { ?>
+                                <div class="itemInfo"><strong><?php echo _b('Elevation (m)'); ?></strong> : <?php echo $this->escape($item['elevation_end']); ?></div>
+                            <?php } ?>
+                        <?php } elseif ($item['item_type'] == 'poi') {  ?>
+                            <?php if($block['showtype'] && !empty($item['type'])) { ?>
+                                <div class="itemInfo"><strong><?php echo _b('Type'); ?></strong> : <?php echo $this->escape($item['type']); ?></div>
+                            <?php } ?>
+                            <?php if($block['showelevation'] && !empty($item['elevation_end'])) { ?>
+                                <div class="itemInfo"><strong><?php echo _b('Elevation (m)'); ?></strong> : <?php echo $this->escape($item['elevation_end']); ?></div>
+                            <?php } ?>
+                        <?php } ?>
+                        <?php if($block['showsummary'] && !empty($item['text_summary'])){  ?>
+                            <div class="itemSummary"><?php echo $item['text_summary']; ?></div>
+                        <?php } ?>
+                        <?php if (!empty($item['map_latitude']) && !empty($item['map_longitude'])) { ?>
+                            <div class="h-geo hidden">
+                                <span class="p-latitude"><?php echo $this->escape($item['map_latitude']); ?></span>,
+                                <span class="p-longitude"><?php echo $this->escape($item['map_longitude']); ?></span>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div>
+            <?php } ?>
+        <?php } ?>
+    </div>
+    <?php if ($block['more_show'] && !empty($block['more_link'])) { ?>
+        <div class="guide-block-more clearfix">
+            <a title="<?php echo _b('More items'); ?>" href="<?php echo $block['more_link']; ?>"><?php echo _b('More items'); ?></a>
+        </div>
+    <?php } ?>
+</div>
