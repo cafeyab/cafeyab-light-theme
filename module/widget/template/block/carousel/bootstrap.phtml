@@ -10,7 +10,7 @@ $height = $options['height'];
 $render = function ($item) use ($_this, $width, $height)
 {
     $caption = $_this->escape($item['caption']);
-    $description = $item['desc'];
+    $description = !empty($item['desc']) ? $item['desc'] : '';
 
     $width = $width ? 'width: '  . $width  . 'px;' : '';
     $height = $height ? 'height: '  . $height . 'px;' : '';
