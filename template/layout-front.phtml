@@ -128,7 +128,8 @@ $breadcrumbs = $this->breadcrumb(array('prefix' => array(array('label' => __('Ho
                                 <li><a href="https://www.cafeyab.com/guide/manage" title="ثبت و مدیریت کافه">ثبت و مدیریت کافه</a></li>
                                 <li><a href="https://www.cafeyab.com/guide" title="فهرست کافه ها">فهرست کافه ها</a></li>
                                 <li><a href="https://www.cafeyab.com/shop" title="فروشگاه">فروشگاه</a></li>
-                                <!-- <li class="dropdown yamm-fw">
+                                <?php /*
+                                <li class="dropdown yamm-fw">
                                     <a href="#" data-toggle="dropdown" class="dropdown-toggle">جسنجوی کافه ها<b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li class="grid-menu">
@@ -268,7 +269,8 @@ $breadcrumbs = $this->breadcrumb(array('prefix' => array(array('label' => __('Ho
                                             </div>
                                         </li>
                                     </ul>
-                                </li> -->
+                                </li>
+                                */ ?>
                             </ul>
                             <?php echo $this->widget('system-user-bar'); ?>
                             <!-- <ul class="nav navbar-nav cafe-richard">
@@ -284,6 +286,17 @@ $breadcrumbs = $this->breadcrumb(array('prefix' => array(array('label' => __('Ho
 <!-- Page main content: breadcrumb, flash-messenger, blocks and module content -->
 <section class="pi-main-container">
     <div class="container">
+        <!--[if lt IE 9]>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-danger">
+                    <h4>خطا در نمایش وب سایت</h4>
+                    <p>مرورگر اینترنت شما قدیمی است و از تکنولوژی های جدید وب پشتیبانی نمی کند. برای استفاده از این وب سایت مرورگر خود را به روز کنید.</p>
+                    <p>شما میتوانید از مرورگر های <a href="https://www.mozilla.org/en-US/firefox/new/" >فایرفاکس</a> یا <a href="https://www.google.com/chrome">گوگل کروم</a> استفاده نمایید.</p>
+                </div>
+            </div>
+        </div>
+        <![endif]-->
         <?php if ($breadcrumbs) { echo $breadcrumbs; } ?>
         <!-- Flash messenger -->
         <?php include $this->template('flash-messenger'); ?>
@@ -294,6 +307,19 @@ $breadcrumbs = $this->breadcrumb(array('prefix' => array(array('label' => __('Ho
                     <?php foreach ($blocks['1'] as $block) {
                         include $blockTemplate;
                     } ?>
+                    <?php if ($module == 'system') { ?>
+                        <div class="pi-block">
+                            <div class="pi-block-title"><h2>گواهینامه ها</h2></div>
+                            <div class="pi-block-content clearfix">
+                                <div class="col-md-6">
+                                    <?php echo $this->enemad('http://cafeyab.com', $this->assetTheme('image/namad2.png')); ?>
+                                </div>
+                                <div class="col-md-6">
+                                    <img class="img-responsive" src="<?php echo $this->assetTheme('image/behpardakht.jpg'); ?>" alt="به پرداخت">
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
                 </div>
             <?php } ?>
             <div class="<?php
@@ -464,6 +490,18 @@ $breadcrumbs = $this->breadcrumb(array('prefix' => array(array('label' => __('Ho
         </div>
     </div>
 </footer>
-<?php $this->footScript()->appendFile($this->assetTheme('js/front.js')); ?>
+<?php //$this->footScript()->appendFile($this->assetTheme('js/front.js')); ?>
+<script type="application/ld+json">
+{
+   "@context": "http://schema.org",
+   "@type": "WebSite",
+   "url": "https://www.cafeyab.com",
+   "potentialAction": {
+     "@type": "SearchAction",
+     "target": "https://www.cafeyab.com/search/?q={search_term_string}",
+     "query-input": "required name=search_term_string"
+   }
+}
+</script>
 </body>
 </html>
