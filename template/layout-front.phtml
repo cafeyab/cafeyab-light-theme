@@ -297,9 +297,7 @@ $breadcrumbs = $this->breadcrumb(array('prefix' => array(array('label' => __('Ho
                 </div>
             <?php } ?>
             <div class="<?php
-            if (isset($blocks['1']) && isset($blocks['8'])) {
-                echo 'col-md-3';
-            } elseif (isset($blocks['1']) || isset($blocks['8'])) {
+            if (isset($blocks['1'])) {
                 echo 'col-md-9';
             } else {
                 echo 'col-md-12';
@@ -357,9 +355,7 @@ $breadcrumbs = $this->breadcrumb(array('prefix' => array(array('label' => __('Ho
     <div class="container">
         <div class="row">
             <div class="<?php
-            if (isset($blocks['1']) && isset($blocks['8'])) {
-                echo 'col-md-3';
-            } elseif (isset($blocks['1']) || isset($blocks['8'])) {
+            if (isset($blocks['8'])) {
                 echo 'col-md-9';
             } else {
                 echo 'col-md-12';
